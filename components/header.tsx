@@ -1,13 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Header() {
   return (
-    <nav className="sticky top-0 w-[80%] mx-auto py-10 bg-white text-black">
-      <div className="flex flex-col md:flex-row mx-auto md:items-center justify-between">
-        <Link href="/" className="text-4xl font-black tracking-tighter">
-          INGENIO
-        </Link>
-        <div className="flex gap-4 text-sm font-sm">
+    <nav className="sticky top-0 w-full mx-auto bg-white text-[#0146e9] border-b-2 border-[#0146e9] z-15">
+      <div className="flex flex-col w-4/6 py-5 md:flex-row mx-auto md:items-center justify-between">
+        <Image
+          src="/Logotipo en azul.png"
+          alt="Ingenio Logo"
+          width={200}
+          height={200}
+        />
+        <div
+          className="flex gap-4 text-sm md:text-lg font-sm"
+          style={{ fontFamily: "MyFont, sans-serif" }}
+        >
           <Link href="/">Contacto</Link>
           <Link href="/">Patrocinadores</Link>
         </div>

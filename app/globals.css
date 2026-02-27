@@ -19,8 +19,54 @@
   }
 }
 
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/POPSTAR.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.my-special-text {
+  font-family: 'MyFont', sans-serif;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0 -100%;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes circuit-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    r: inherit;
+  }
+  50% {
+    opacity: 0.8;
+    r: calc(inherit + 4px);
+  }
+}
+
+
+/* Añadir la animación */
+.path {
+  stroke-dasharray: 1000; /* Longitud de la línea */
+  stroke-dashoffset: 1000; /* Comienza oculta */
+  animation: dash 10s linear forwards; /* Animación de trazo progresivo */
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0; /* Al final, la línea estará completamente visible */
+  }
 }
