@@ -14,7 +14,8 @@ export function Header() {
               alt="Ingenio Logo"
               width={200}
               height={200}
-              style={{ height: "auto" }}
+              style={{ width: "auto", height: "auto" }}
+              priority
             />
           </Link>
         </div>
