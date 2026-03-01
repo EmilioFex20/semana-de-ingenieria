@@ -3,7 +3,7 @@ import { SponsorsCard } from "./sponsor-card";
 
 export function SponsorTiers() {
   return (
-    <div className="flex flex-col md:flex-row mx-auto gap-8">
+    <div className="grid grid-cols-1 xl:grid-cols-3 mx-auto gap-8">
       <Reveal delay={0}>
         <SponsorsCard
           title="Básico"
