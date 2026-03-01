@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import CircuitLines from "./circuit-lines";
 
 export default function HeroImage() {
   const [loaded, setLoaded] = useState(false);
@@ -20,7 +19,7 @@ export default function HeroImage() {
         transform: loaded ? "scale(1)" : "scale(0.95)",
         opacity: loaded ? 1 : 0,
         transition:
-          "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 3s ease",
+          "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 2s ease",
       }}
     >
       {/* Base image */}

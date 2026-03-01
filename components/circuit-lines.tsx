@@ -127,7 +127,7 @@ export default function CircuitLines() {
   return (
     <svg
       viewBox="0 0 1000 500"
-      className="absolute inset-0 w-full md:h-2/3 xl:h-5/6 2xl:h-full z-10 hidden md:block"
+      className="absolute inset-0 w-full lg:h-4/6 2xl:h-11/12 z-10 hidden lg:block"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>

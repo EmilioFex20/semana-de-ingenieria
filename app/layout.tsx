@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 
-const inter = Inter({
+export const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+export const pixelifySans = Pixelify_Sans({
+  variable: "--font-pixelify",
   subsets: ["latin"],
 });
 
