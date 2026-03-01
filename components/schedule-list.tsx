@@ -15,10 +15,10 @@ export function ScheduleList({ items }: { items: ScheduleItem[] }) {
             <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[#8a8a8a]" />
 
             <div className="leading-tight">
-              <div className="text-base md:text-lg font-semibold text-black">
+              <div className="text-xl md:text-2xl font-semibold text-black">
                 {item.time}
               </div>
-              <div className="text-sm md:text-base text-[#6d6d6d]">
+              <div className="text-lg md:text-xl text-[#6d6d6d]">
                 {item.title}
               </div>
             </div>

@@ -25,23 +25,17 @@ const circuitPaths: CircuitPath[] = [
   },
 
   // Top traces going right
-  { d: "M 80 0 L 120 60 L 200 60 L 220 75", delay: 0.3, duration: 1.5 },
-  { d: "M 220 75 L 360 75 L 380 60 L 480 60", delay: 0.6, duration: 1.8 },
-  { d: "M 480 60 L 530 60 L 560 80", delay: 1.0, duration: 1.2 },
+  { d: "M 80 0 L 120 75 L 200 75 L 220 90", delay: 0.3, duration: 1.5 },
+  { d: "M 220 90 L 360 90 L 380 75 L 480 75", delay: 0.6, duration: 1.8 },
+  { d: "M 480 75 L 530 75 L 560 95", delay: 1.0, duration: 1.2 },
 
   // Top-right corner bracket
   { d: "M 880 60 L 970 60", delay: 0.2, duration: 1, strokeWidth: 2 },
-  {
-    d: "M 990 75 L 990 55 L 970 55",
-    delay: 0.15,
-    duration: 1,
-    strokeWidth: 2.5,
-  },
   { d: "M 990 30 L 990 120", delay: 0.25, duration: 1, strokeWidth: 2 },
 
   // Top-right traces
   {
-    d: "M 800 90 L 870 90 L 890 105 L 940 105",
+    d: "M 800 105 L 870 105 L 890 120 L 940 120",
     delay: 0.4,
     duration: 1.6,
   },
@@ -103,9 +97,9 @@ const circuitPaths: CircuitPath[] = [
 
 const circuitDots: CircuitDot[] = [
   { cx: 120, cy: 180, r: 3.5, delay: 0.3 },
-  { cx: 200, cy: 60, r: 3, delay: 0.6 },
-  { cx: 480, cy: 60, r: 3, delay: 1.0 },
-  { cx: 940, cy: 105, r: 3.5, delay: 0.8 },
+  { cx: 200, cy: 75, r: 3, delay: 0.6 },
+  { cx: 480, cy: 75, r: 3, delay: 1.0 },
+  { cx: 940, cy: 120, r: 3.5, delay: 0.8 },
   { cx: 970, cy: 250, r: 3, delay: 0.9 },
   { cx: 200, cy: 210, r: 3, delay: 0.7 },
   { cx: 300, cy: 350, r: 3, delay: 1.0 },
@@ -230,7 +224,7 @@ export default function CircuitLines() {
               dur="3s"
               repeatCount="indefinite"
               begin="2.5s"
-              path="M 80 0 L 120 60 L 200 60 L 220 75 M 220 75 L 360 75 L 380 60 L 480 60 M 480 60 L 530 60 L 560 80"
+              path="M 80 0 L 120 75 L 200 75 L 220 90 M 220 90 L 360 90 L 380 75 L 480 75 M 480 75 L 530 75 L 560 95"
             />
           </circle>
           <circle r="1.5" fill="#0146e9" filter="url(#dotGlow)" opacity="0.7">

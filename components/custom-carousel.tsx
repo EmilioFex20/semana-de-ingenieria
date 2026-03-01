@@ -21,7 +21,7 @@ const slides: Slide[] = [
 function slideStyle(offset: number) {
   if (offset === 0) return "opacity-100 scale-100 z-20";
   if (offset === -1 || offset === 1) return "opacity-45 scale-95 z-10";
-  return "opacity-20 scale-90 z-0";
+  return "opacity-45 scale-90 z-0";
 }
 
 export function Continuous3Carousel() {
@@ -57,7 +57,7 @@ export function Continuous3Carousel() {
           const offset = norm > len / 2 ? norm - len : norm;
 
           return (
-            <CarouselItem key={s.src} className="pl-4 basis-2/3 md:basis-1/3">
+            <CarouselItem key={s.src} className="pl-4 basis-2/3 lg:basis-1/3">
               <div
                 className={[
                   "transition-all duration-300 ease-out",

@@ -18,8 +18,8 @@ export function CustomCard({
 }) {
   return (
     <Card className="w-full text-black bg-[#f2f2f2] flex flex-col">
-      <CardHeader className="md:min-h-[4.5rem]">
-        <CardTitle className="text-xl md:text-2xl font-semibold">
+      <CardHeader className="xl:min-h-[4.5rem]">
+        <CardTitle className="text-xl md:text-2xl font-bold">
           {title || "Participar en concursos"}
         </CardTitle>
       </CardHeader>
@@ -31,7 +31,11 @@ export function CustomCard({
         </p>
 
         <div className="mt-auto">
-          <Button className="text-lg md:text-xl font-normal w-full">
+          <Button
+            variant="default"
+            size="lg"
+            className="mt-5 mx-auto md:mx-0 block w-full text-lg md:text-xl"
+          >
             Inscribete aquí
           </Button>
         </div>
