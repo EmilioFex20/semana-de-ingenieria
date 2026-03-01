@@ -3,6 +3,7 @@ import { TeamCard } from "@/components/team-card";
 
 interface EquipoRepresentativosProps {
   title: string;
+  slug: string;
   description: string;
   image: string;
 }
@@ -10,32 +11,37 @@ interface EquipoRepresentativosProps {
 const EquipoRepresentativos: EquipoRepresentativosProps[] = [
   {
     title: "FoxCoding",
+    slug: "foxcoding",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et accusantium nam iure vero dignissimos sint est ipsum",
+      "Equipo de programación competitiva que impulsa la comunidad de estudiantes que “desarrollan el futuro” mediante retos, competencias y proyectos.",
     image: "/logos/FoxCoding.png",
   },
   {
-    title: "Cmb",
+    title: "CMB",
+    slug: "cmb",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et accusantium nam iure vero dignissimos sint est ipsum",
+      "Equipo multidisciplinario que diseña, fabrica y compite con un vehículo todo terreno en Baja SAE International, combinando innovación y trabajo en equipo.",
     image: "/logos/Cmb.png",
   },
   {
     title: "FoxForce",
+    slug: "foxforce",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et accusantium nam iure vero dignissimos sint est ipsum",
+      "Equipo multidisciplinario enfocado en el diseño, análisis, pruebas y manufactura de un avión de carga a radio control para competir internacionalmente.",
     image: "/logos/FoxForce.png",
   },
   {
     title: "FoxRobotics",
+    slug: "foxrobotics",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et accusantium nam iure vero dignissimos sint est ipsum",
+      "Grupo estudiantil dedicado a robótica y STEM, orientado a competencias y proyectos de innovación e investigación para destacar a nivel nacional e internacional.",
     image: "/logos/FoxRobotics.png",
   },
   {
     title: "SeaFox",
+    slug: "seafox",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et accusantium nam iure vero dignissimos sint est ipsum",
+      "Equipo de robótica submarina (fundado en 2016) que diseña y manufactura un ROV para el MATE ROV World Championship, promoviendo STEM y tecnología de impacto.",
     image: "/logos/SeaFox.png",
   },
 ];
@@ -51,7 +57,8 @@ export default function EquiposRepresentativos() {
       <div className="flex flex-col gap-30 w-5/6 lg:w-4/6 mx-auto my-20 md:my-30 text-black">
         {EquipoRepresentativos.map((equipo, idx) => (
           <TeamCard
-            key={idx}
+            key={equipo.slug}
+            id={equipo.slug}
             title={equipo.title}
             description={equipo.description}
             image={equipo.image}

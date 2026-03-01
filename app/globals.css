@@ -47,6 +47,10 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: 'MyFont';
   src: url('/fonts/POPSTAR.TTF') format('truetype');

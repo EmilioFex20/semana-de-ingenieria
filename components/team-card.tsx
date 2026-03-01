@@ -3,18 +3,23 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 
 export function TeamCard({
+  id,
   title,
   description,
   image,
   reversed = false,
 }: {
+  id: string;
   title: string;
   description: string;
   image: string;
   reversed?: boolean;
 }) {
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 items-center">
+    <section
+      id={id}
+      className="grid grid-cols-1 xl:grid-cols-2 gap-10 items-center "
+    >
       <Reveal delay={120} className={reversed ? "xl:order-2" : "xl:order-1"}>
         <h2 className="text-3xl md:text-5xl font-bold text-center md:text-start mb-5">
           {title}
@@ -39,6 +44,6 @@ export function TeamCard({
           className="rounded-lg mx-auto h-full"
         />
       </Reveal>
-    </div>
+    </section>
   );
 }

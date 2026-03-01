@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import * as React from "react";
 import AutoScroll from "embla-carousel-auto-scroll";
@@ -8,14 +9,18 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-type Slide = { src: string; alt: string };
+type Slide = { src: string; alt: string; slug: string };
 
 const slides: Slide[] = [
-  { src: "/logos/FoxCoding.png", alt: "Logo de FoxCoding" },
-  { src: "/logos/FoxRobotics.png", alt: "Logo de FoxRobotics" },
-  { src: "/logos/FoxForce.png", alt: "Logo de FoxForce" },
-  { src: "/logos/Cmb.png", alt: "Logo de CMB" },
-  { src: "/logos/SeaFox.png", alt: "Logo de SeaFox" },
+  { src: "/logos/FoxCoding.png", alt: "Logo de FoxCoding", slug: "foxcoding" },
+  {
+    src: "/logos/FoxRobotics.png",
+    alt: "Logo de FoxRobotics",
+    slug: "foxrobotics",
+  },
+  { src: "/logos/FoxForce.png", alt: "Logo de FoxForce", slug: "foxforce" },
+  { src: "/logos/Cmb.png", alt: "Logo de CMB", slug: "cmb" },
+  { src: "/logos/SeaFox.png", alt: "Logo de SeaFox", slug: "seafox" },
 ];
 
 function slideStyle(offset: number) {
@@ -58,21 +63,27 @@ export function Continuous3Carousel() {
 
           return (
             <CarouselItem key={s.src} className="pl-4 basis-2/3 lg:basis-1/3">
-              <div
-                className={[
-                  "transition-all duration-300 ease-out",
-                  "rounded-2xl overflow-hidden shadow-xl",
-                  "h-[220px] md:h-[280px]",
-                  slideStyle(offset),
-                ].join(" ")}
+              <Link
+                href={`/equipos-representativos#${s.slug}`}
+                className="block"
+                aria-label={`Ir a ${s.alt}`}
               >
-                <img
-                  src={s.src}
-                  alt={s.alt}
-                  className="h-full w-full object-cover"
-                  draggable={false}
-                />
-              </div>
+                <div
+                  className={[
+                    "transition-all duration-300 ease-out",
+                    "rounded-2xl overflow-hidden shadow-xl",
+                    "h-[220px] md:h-[280px]",
+                    slideStyle(offset),
+                  ].join(" ")}
+                >
+                  <img
+                    src={s.src}
+                    alt={s.alt}
+                    className="h-full w-full object-cover"
+                    draggable={false}
+                  />
+                </div>
+              </Link>
             </CarouselItem>
           );
         })}
