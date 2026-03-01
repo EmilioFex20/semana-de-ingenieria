@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 import * as React from "react";
 import AutoScroll from "embla-carousel-auto-scroll";
@@ -30,7 +31,7 @@ function slideStyle(offset: number) {
 }
 
 export function Continuous3Carousel() {
-  const [api, setApi] = React.useState<any>(null);
+  const [api, setApi] = React.useState<ReturnType<typeof setApi> | null>(null);
   const [selected, setSelected] = React.useState(0);
 
   React.useEffect(() => {
@@ -38,12 +39,14 @@ export function Continuous3Carousel() {
     const onSelect = () => setSelected(api.selectedScrollSnap());
     onSelect();
     api.on("select", onSelect);
-    return () => api.off("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
   }, [api]);
 
   return (
     <Carousel
-      setApi={setApi}
+      setApi={setApi as any}
       opts={{ loop: true, align: "center" }}
       plugins={[
         AutoScroll({
@@ -53,6 +56,7 @@ export function Continuous3Carousel() {
         }),
       ]}
       className="w-full"
+      aria-label="Carrusel de equipos representativos"
     >
       <CarouselContent className="-ml-4 items-center">
         {slides.map((s, i) => {
@@ -65,21 +69,24 @@ export function Continuous3Carousel() {
             <CarouselItem key={s.src} className="pl-4 basis-2/3 lg:basis-1/3">
               <Link
                 href={`/equipos-representativos#${s.slug}`}
-                className="block"
+                className="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand rounded-2xl"
                 aria-label={`Ir a ${s.alt}`}
               >
                 <div
                   className={[
                     "transition-all duration-300 ease-out",
-                    "rounded-2xl overflow-hidden shadow-xl",
+                    "rounded-2xl overflow-hidden shadow-lg",
                     "h-[220px] md:h-[280px]",
                     slideStyle(offset),
                   ].join(" ")}
                 >
-                  <img
+                  <Image
                     src={s.src}
                     alt={s.alt}
+                    width={400}
+                    height={280}
                     className="h-full w-full object-cover"
+                    style={{ width: "100%", height: "100%" }}
                     draggable={false}
                   />
                 </div>
