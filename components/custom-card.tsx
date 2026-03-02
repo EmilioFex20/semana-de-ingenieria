@@ -1,12 +1,4 @@
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export function CustomCard({
@@ -17,14 +9,14 @@ export function CustomCard({
   description?: string;
 }) {
   return (
-    <Card className="w-full text-black bg-[#f2f2f2] flex flex-col">
-      <CardHeader className="xl:min-h-[4.5rem]">
+    <Card className="h-full border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col rounded-xl">
+      <CardHeader className="xl:min-h-[4.5rem] pb-2">
         <CardTitle className="text-xl md:text-2xl font-bold">
           {title || "Participar en concursos"}
         </CardTitle>
       </CardHeader>
 
-      <CardContent className="text-lg md:text-xl text-[#6d6d6d] font-normal flex flex-col gap-4 flex-1">
+      <CardContent className="text-base md:text-lg text-muted-foreground leading-relaxed flex flex-col gap-4 flex-1">
         <p>
           {description ||
             "Pon a prueba tus habilidades técnicas y creativas participando en los concursos de la Semana de Ingeniería. Forma equipo, resuelve retos y vive la experiencia de competir en un entorno colaborativo."}
@@ -34,7 +26,7 @@ export function CustomCard({
           <Button
             variant="default"
             size="lg"
-            className="mt-5 mx-auto md:mx-0 block w-full text-lg md:text-xl"
+            className="w-full text-base md:text-lg mt-4 bg-brand hover:bg-brand/90 text-white"
           >
             Inscribete aquí
           </Button>

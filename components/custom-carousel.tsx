@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 import * as React from "react";
 import AutoScroll from "embla-carousel-auto-scroll";
@@ -20,7 +21,8 @@ const slides: Slide[] = [
   },
   { src: "/logos/FoxForce.png", alt: "Logo de FoxForce", slug: "foxforce" },
   { src: "/logos/Cmb.png", alt: "Logo de CMB", slug: "cmb" },
-  { src: "/logos/SeaFox.png", alt: "Logo de SeaFox", slug: "seafox" },
+  { src: "/logos/SeaFoxv2.png", alt: "Logo de SeaFox", slug: "seafox" },
+  { src: "/logos/FoxDev.png", alt: "Logo de FoxDev", slug: "foxdev" },
 ];
 
 function slideStyle(offset: number) {
@@ -65,7 +67,7 @@ export function Continuous3Carousel() {
             <CarouselItem key={s.src} className="pl-4 basis-2/3 lg:basis-1/3">
               <Link
                 href={`/equipos-representativos#${s.slug}`}
-                className="block"
+                className="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand rounded-2xl"
                 aria-label={`Ir a ${s.alt}`}
               >
                 <div
@@ -76,10 +78,13 @@ export function Continuous3Carousel() {
                     slideStyle(offset),
                   ].join(" ")}
                 >
-                  <img
+                  <Image
                     src={s.src}
                     alt={s.alt}
+                    width={400}
+                    height={280}
                     className="h-full w-full object-cover"
+                    style={{ width: "100%", height: "100%" }}
                     draggable={false}
                   />
                 </div>
