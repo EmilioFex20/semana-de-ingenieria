@@ -45,18 +45,23 @@ export default function Home() {
         {/* Cards */}
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 w-5/6 lg:w-4/6 mx-auto mt-16">
           <Reveal delay={0}>
-            <CustomCard />
+            <CustomCard
+              description="Pon a prueba tus habilidades técnicas y creativas participando en los concursos de la Semana de Ingeniería. Forma equipo, resuelve retos y vive la experiencia de competir en un entorno colaborativo."
+              url="/concursos"
+            />
           </Reveal>
           <Reveal delay={120}>
             <CustomCard
               title="Participar en Expo Proyectos"
               description="Presenta proyectos académicos, prototipos o ideas innovadoras desarrolladas por estudiantes. Un espacio para compartir, recibir retroalimentación y mostrar el talento que se forma en ingeniería."
+              url="https://docs.google.com/forms/u/0/d/1vWkVIU_d7wa3Lww_NwZtimgksLgRrQrISYIKolJZo0Q/viewform?usp=drivesdk&edit_requested=true"
             />
           </Reveal>
           <Reveal delay={240}>
             <CustomCard
               title="Participar como empresa"
               description="Vincúlate con estudiantes y docentes a través de charlas, retos, exposiciones o patrocinios. La Semana de Ingeniería es una oportunidad para acercarte al talento universitario y a la comunidad académica."
+              url="https://docs.google.com/forms/u/0/d/1TWc1LcJCuJNyB-ArQvgDvuN33vk2YviStAove0aUgUU/viewform?usp=drivesdk&edit_requested=true"
             />
           </Reveal>
         </div>
@@ -82,27 +87,73 @@ export default function Home() {
       {/* --- Horario --- */}
       <section id="horario" className="bg-white py-16">
         <div className="w-5/6 lg:w-4/6 mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
             <Reveal delay={0}>
               <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-2">
-                Programa
+                Día 1
               </p>
               <h2 className="text-3xl md:text-5xl font-bold text-balance">
                 Horario 19 de marzo
               </h2>
             </Reveal>
 
-            <Reveal delay={120}>
+            <Reveal delay={120} className="col-span-3">
               <ScheduleList
                 items={[
-                  { time: "8:40 AM", title: "Inauguración" },
-                  { time: "9:30 AM", title: "Conferencia: IA aplicada" },
-                  { time: "10:20 AM", title: "Receso" },
-                  { time: "11:00 AM", title: "Panel: Industria y academia" },
-                  { time: "12:10 PM", title: "Expo Proyectos" },
-                  { time: "1:00 PM", title: "Cierre" },
+                  {
+                    time: "8:40 AM",
+                    title: "Inauguración - Explanada del CEID",
+                  },
+                  {
+                    time: "9:00 AM - 12:00 PM",
+                    title:
+                      "Expo-Proyectos + Tours Representativos + Expo Empresas",
+                  },
+                  {
+                    time: "11:00 AM - 1:00 PM",
+                    title: "Concurso de Estructuras",
+                  },
+                  {
+                    time: "1:00 PM - 4:00 PM",
+                    title:
+                      "Expo-Proyectos + Tours Representativos + Expo Empresas",
+                  },
+                  {
+                    time: "3:00 PM - 5:00 PM",
+                    title: "Concurso Lanza Papas",
+                  },
                 ]}
               />
+            </Reveal>
+          </div>
+        </div>
+        <div className="w-5/6 lg:w-4/6 mx-auto mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
+            <Reveal delay={120} className="col-span-3">
+              <ScheduleList
+                items={[
+                  {
+                    time: "9:00 AM - 12:00 PM",
+                    title:
+                      "Expo-Proyectos + Tours Representativos + Expo Empresas",
+                  },
+                  { time: "11:00 AM - 1:00 PM", title: "Concurso de Robótica" },
+                  {
+                    time: "1:00 PM - 4:00 PM",
+                    title: "Expo-Proyectos + Tours Representativos",
+                  },
+                  { time: "3:00 PM - 5:00 PM", title: "Concurso Innovación" },
+                  { time: "5:30 PM", title: "Clausura – Explanada CEID" },
+                ]}
+              />
+            </Reveal>
+            <Reveal delay={0}>
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-2 text-end">
+                Día 2
+              </p>
+              <h2 className="text-3xl md:text-5xl font-bold text-balance text-end">
+                Horario 20 de marzo
+              </h2>
             </Reveal>
           </div>
         </div>

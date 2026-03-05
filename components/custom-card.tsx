@@ -1,12 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function CustomCard({
   title,
   description,
+  url,
 }: {
   title?: string;
   description?: string;
+  url?: string;
 }) {
   return (
     <Card className="h-full border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col rounded-xl">
@@ -17,19 +20,28 @@ export function CustomCard({
       </CardHeader>
 
       <CardContent className="text-base md:text-lg text-muted-foreground leading-relaxed flex flex-col gap-4 flex-1">
-        <p>
-          {description ||
-            "Pon a prueba tus habilidades técnicas y creativas participando en los concursos de la Semana de Ingeniería. Forma equipo, resuelve retos y vive la experiencia de competir en un entorno colaborativo."}
-        </p>
+        <p>{description}</p>
 
         <div className="mt-auto">
-          <Button
-            variant="default"
-            size="lg"
-            className="w-full text-base md:text-lg mt-4 bg-brand hover:bg-brand/90 text-white"
-          >
-            Inscribete aquí
-          </Button>
+          {url ? (
+            <Link href={url} passHref>
+              <Button
+                variant="default"
+                size="lg"
+                className="w-full text-base md:text-lg mt-4 bg-brand hover:bg-brand/90 text-white"
+              >
+                Inscribete aquí
+              </Button>
+            </Link>
+          ) : (
+            <Button
+              variant="default"
+              size="lg"
+              className="w-full text-base md:text-lg mt-4 bg-brand hover:bg-brand/90 text-white"
+            >
+              Inscribete aquí
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>

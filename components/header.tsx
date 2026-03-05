@@ -18,7 +18,7 @@ export function Header() {
 
   return (
     <nav
-      className="sticky top-0 w-full bg-white/95 backdrop-blur-sm text-foreground border-b border-border z-50 header-fade-in items-center"
+      className="sticky top-0 w-full bg-white backdrop-blur-sm text-foreground border-b border-border z-50 header-fade-in items-center"
       role="navigation"
       aria-label="Navegacion principal"
     >
