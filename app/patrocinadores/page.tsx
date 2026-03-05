@@ -11,13 +11,13 @@ interface Sponsor {
 
 const confirmedSponsors: Sponsor[] = [
   { name: "Tutuli Truck", logo: "/sponsors/Tutuli-Truck.jpg" },
-  { name: "Spark technologies", logo: "/sponsors/Spark.png" },
   { name: "Trimble", logo: "/sponsors/Trimble.png" },
   { name: "Mangiamos", logo: "/sponsors/Mangiamos.jpg" },
   { name: "RockOn Gym", logo: "/sponsors/RockOn-Climbing-Gym.jpg" },
   { name: "Xquadrone", logo: "/sponsors/Xquadrone.png" },
   { name: "Costco", logo: "/sponsors/Costco.png" },
   { name: "Creative Labs", logo: "/sponsors/Creative-Labs.jpg" },
+  { name: "IHOP", logo: "/sponsors/IHOP.svg" },
 ];
 
 export default function Sponsors() {

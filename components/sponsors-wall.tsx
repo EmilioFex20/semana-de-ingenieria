@@ -13,9 +13,9 @@ export function SponsorsWall({ sponsors }: { sponsors: Sponsor[] }) {
   return (
     <section className="w-full">
       <div className="flex flex-col gap-2">
-        <h2 className="text-2xl md:text-4xl font-bold text-center">
+        <h1 className="text-3xl md:text-5xl font-bold text-center">
           Patrocinadores confirmados
-        </h2>
+        </h1>
         <p className="text-base md:text-xl text-center text-black/60">
           Gracias por impulsar la Semana de Ingeniería 2026
         </p>
