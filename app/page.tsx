@@ -129,7 +129,7 @@ export default function Home() {
         </div>
         <div className="w-5/6 lg:w-4/6 mx-auto mt-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
-            <Reveal delay={120} className="col-span-3">
+            <Reveal delay={120} className="col-span-3 order-2 lg:order-1">
               <ScheduleList
                 items={[
                   {
@@ -147,11 +147,11 @@ export default function Home() {
                 ]}
               />
             </Reveal>
-            <Reveal delay={0}>
-              <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-2 text-end">
+            <Reveal delay={0} className="order-1 lg:order-2">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-2 text-start lg:text-end">
                 Día 2
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold text-balance text-end">
+              <h2 className="text-3xl md:text-5xl font-bold text-balance text-start lg:text-end">
                 Horario 20 de marzo
               </h2>
             </Reveal>
