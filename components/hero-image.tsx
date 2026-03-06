@@ -24,7 +24,7 @@ export default function HeroImage() {
     >
       {/* Base image */}
       <Image
-        src="/Image.png"
+        src="/Logo Final.jpeg"
         alt="Semana de Ingenio - Engineering Week featuring various engineering disciplines"
         width={0}
         height={0}
