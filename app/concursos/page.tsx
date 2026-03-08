@@ -31,7 +31,7 @@ export default function Concursos() {
         <Reveal delay={360}>
           <CustomCard
             title="Registro Concurso INGENIA -  Engineering What Matters"
-            url="https://docs.google.com/forms/d/1WtnUp7fQ97MJbvdfvrE6OGwjMVZLpshVehXFyznDhWM/viewform?edit_requested=true"
+            url="/retos-ingenia"
           />
         </Reveal>
         <Reveal delay={480}>
