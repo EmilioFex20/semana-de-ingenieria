@@ -21,7 +21,10 @@ const retos = [
       "Industria",
       "ODS 12",
     ],
-    pdf: "/retos/RETO 1.pdf",
+    pdfPreview:
+      "https://drive.google.com/file/d/1zXLyzZxA_qVW2FHOhSwuPBsmRWF7piw1/preview",
+    pdfOpen:
+      "https://drive.google.com/file/d/1zXLyzZxA_qVW2FHOhSwuPBsmRWF7piw1/view",
     description:
       "Diseña una solución innovadora que ayude a reducir, reutilizar o transformar residuos, promoviendo prácticas de producción y consumo responsables alineadas con el ODS 12.",
   },
@@ -32,7 +35,10 @@ const retos = [
     difficulty: "Intermedio",
     type: "Animación / Videojuego o Software (Prototipo)",
     subjects: ["Salud", "Educación", "Bienestar", "Juventud", "ODS 3", "ODS 4"],
-    pdf: "/retos/RETO 2.pdf",
+    pdfPreview:
+      "https://drive.google.com/file/d/16Tp5AqmigEOuoPF0wr2VnI9mbEKNMpYg/preview",
+    pdfOpen:
+      "https://drive.google.com/file/d/16Tp5AqmigEOuoPF0wr2VnI9mbEKNMpYg/view",
     description:
       "Crea una solución educativa, tecnológica o interactiva que ayude a prevenir adicciones y promover la salud integral en adolescentes.",
   },
@@ -50,7 +56,10 @@ const retos = [
       "ODS 5",
       "ODS 10",
     ],
-    pdf: "/retos/RETO 3.pdf",
+    pdfPreview:
+      "https://drive.google.com/file/d/17cjnVhtwpkNAFA-Z1zrjA1UZPo-m_A52/preview",
+    pdfOpen:
+      "https://drive.google.com/file/d/17cjnVhtwpkNAFA-Z1zrjA1UZPo-m_A52/view",
     description:
       "Propón una solución tecnológica o social que contribuya a reducir desigualdades en la comunidad, promoviendo el acceso equitativo a oportunidades, educación o servicios.",
   },
@@ -67,7 +76,10 @@ const retos = [
       "Transporte",
       "Comunidad",
     ],
-    pdf: "/retos/RETO 4.pdf",
+    pdfPreview:
+      "https://drive.google.com/file/d/1ArWQqjbI4iegU9tfmAp0jIWlLi5P8o0x/preview",
+    pdfOpen:
+      "https://drive.google.com/file/d/1ArWQqjbI4iegU9tfmAp0jIWlLi5P8o0x/view",
     description:
       "Diseña una solución tecnológica o conceptual que ayude a mejorar la movilidad urbana, facilitando desplazamientos más eficientes, seguros y sostenibles.",
   },
@@ -78,7 +90,10 @@ const retos = [
     difficulty: "Avanzado",
     type: "Investigación y propuesta conceptual",
     subjects: ["Energía", "Sustentabilidad", "Innovación", "Cambio climático"],
-    pdf: "/retos/RETO 5.pdf",
+    pdfPreview:
+      "https://drive.google.com/file/d/1uLn0EXtCAjmiFfYQVQDWYk77m99U86q4/preview",
+    pdfOpen:
+      "https://drive.google.com/file/d/1uLn0EXtCAjmiFfYQVQDWYk77m99U86q4/view",
     description:
       "Propón una solución innovadora que mejore la eficiencia energética o promueva el uso de energías limpias en climas extremos.",
   },
@@ -105,7 +120,9 @@ function Badge({
 }
 
 export default function Ingenia() {
-  const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
+  const [selectedReto, setSelectedReto] = useState<(typeof retos)[0] | null>(
+    null,
+  );
 
   return (
     <div className="w-full bg-white py-12 md:py-16">
@@ -166,7 +183,7 @@ export default function Ingenia() {
 
                 <Button
                   key={reto.id}
-                  onClick={() => setSelectedPdf(reto.pdf)}
+                  onClick={() => setSelectedReto(reto)}
                   variant="convocatoria"
                   size="lg"
                   className="w-full text-base md:text-lg mt-4"
@@ -187,20 +204,43 @@ export default function Ingenia() {
           ))}
         </div>
       </div>
-      {selectedPdf && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-5xl h-[85vh] rounded-2xl bg-white overflow-hidden shadow-xl">
-            <button
-              onClick={() => setSelectedPdf(null)}
-              className="absolute top-4 right-4 z-10 rounded-full bg-black text-white px-4 py-2"
-            >
-              Cerrar
-            </button>
+      {selectedReto && (
+        <div className="fixed inset-0 z-50 bg-black/60 p-4 flex items-center justify-center">
+          <div className="relative w-full max-w-6xl h-[85vh] overflow-hidden rounded-3xl bg-white shadow-xl">
+            <div className="flex items-center justify-between border-b border-black/10 px-5 py-4">
+              <div>
+                <h3 className="text-xl font-bold">{selectedReto.title}</h3>
+                <p className="text-sm text-black/60">Vista previa del reto</p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Link
+                  href={selectedReto.pdfOpen}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="default"
+                    onClick={() => setSelectedReto(null)}
+                    className="rounded-full bg-brand hover:bg-brand/90"
+                  >
+                    Abrir PDF
+                  </Button>
+                </Link>
+                <Button
+                  variant="convocatoria"
+                  onClick={() => setSelectedReto(null)}
+                  className="rounded-full"
+                >
+                  Cerrar
+                </Button>
+              </div>
+            </div>
 
             <iframe
-              src={selectedPdf}
-              className="w-full h-full"
-              title="Vista previa del PDF"
+              src={selectedReto.pdfPreview}
+              className="h-full w-full"
+              title={`Preview de ${selectedReto.title}`}
             />
           </div>
         </div>
