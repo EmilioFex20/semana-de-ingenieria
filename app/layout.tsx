@@ -15,8 +15,8 @@ export const pixelifySans = Pixelify_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Ingenio",
-  description: "Sitio web para la semana de ingeniería de Cetys Universidad",
+  title: "Ingenio Cetys - Semana de Ingeniería en CETYS",
+  description: "Descubre la semana de ingeniería de CETYS Universidad",
 };
 
 export default function RootLayout({

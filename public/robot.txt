@@ -1,0 +1,16 @@
+# Allow all web crawlers to access all content
+User-agent: *
+Disallow:
+
+# Disallow a specific folder (example)
+Disallow: /private/
+
+# Disallow a specific page (example)
+Disallow: /login
+
+# Allow Googlebot to crawl the entire site
+User-agent: Googlebot
+Disallow:
+
+# Sitemap location
+Sitemap: https://ingeniocetys.foxcoding.com.mx/sitemap.xml
