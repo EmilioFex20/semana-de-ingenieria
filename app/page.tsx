@@ -111,7 +111,7 @@ export default function Home() {
                   },
                   {
                     time: "11:00 AM - 1:00 PM",
-                    title: "Concurso de Estructuras",
+                    title: "Concurso de Lanza Papas",
                   },
                   {
                     time: "1:00 PM - 4:00 PM",
@@ -120,7 +120,7 @@ export default function Home() {
                   },
                   {
                     time: "3:00 PM - 5:00 PM",
-                    title: "Concurso Lanza Papas",
+                    title: "Concurso Estructuras",
                   },
                 ]}
               />
