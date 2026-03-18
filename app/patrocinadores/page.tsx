@@ -15,7 +15,10 @@ const confirmedSponsors: Sponsor[] = [
   { name: "Mangiamos", logo: "/sponsors/Mangiamos.jpg" },
   { name: "RockOn Gym", logo: "/sponsors/RockOn-Climbing-Gym.jpg" },
   { name: "Xquadrone", logo: "/sponsors/Xquadrone.png" },
-  { name: "Costco", logo: "/sponsors/Costco.png" },
+  { name: "Coto", logo: "/sponsors/Coto.jpeg" },
+  { name: "LunaWater", logo: "/sponsors/LunaWater.png" },
+  { name: "OneGym", logo: "/sponsors/OneGym.jpeg" },
+  { name: "Palestra", logo: "/sponsors/Palestra.jpeg" },
   { name: "Creative Labs", logo: "/sponsors/Creative-Labs.jpg" },
   { name: "IHOP", logo: "/sponsors/IHOP.svg" },
 ];
